@@ -26,22 +26,21 @@ namespace TicTacShotgun.Simulation
             board = new int[BOARD_SIZE, BOARD_SIZE];
         }
         
-        public bool IsMoveValid(int x, int y)
+        public bool IsMoveValid(Move move)
         {
-            return x < BOARD_SIZE && y < BOARD_SIZE && board[x, y] == EMPTY_FIELD;
+            return move.X < BOARD_SIZE && move.Y < BOARD_SIZE && board[move.X, move.Y] == EMPTY_FIELD;
         }
 
-        public void MakeMove(int playerIndex, int x, int y)
+        public void MakeMove(Move move)
         {
-            if (!IsMoveValid(x, y))
+            if (!IsMoveValid(move))
             {
                 TicTacLogger.LogError("Move not allowed");
                 return;
             }
 
-            board[x, y] = playerIndex;
+            board[move.X, move.Y] = move.PlayerIndex;
 
-            var move = new Move(x, y, playerIndex);
             OnMovePerformed.Invoke(move);
         }
 

@@ -54,11 +54,12 @@
      <Compile Include="Assets\TicTacShotgun\Scripts\BoardView\BoardGridViewController.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GameFlow\GameController.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GameFlow\GameEndDetails.cs" />
-     <Compile Include="Assets\TicTacShotgun\Scripts\PlayerInput\IClickable.cs" />
-     <Compile Include="Assets\TicTacShotgun\Scripts\PlayerInput\MouseInput.cs" />
+     <Compile Include="Assets\TicTacShotgun\Scripts\PlayerIndexFactory.cs" />
+     <Compile Include="Assets\TicTacShotgun\Scripts\PlayerInput\BoardMouseInput.cs" />
+     <Compile Include="Assets\TicTacShotgun\Scripts\PlayerInput\HumanPlayerInputMediator.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\Simulation\Board.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\Simulation\BoardExtensions.cs" />
-     <Compile Include="Assets\TicTacShotgun\Scripts\Simulation\HumanPlayer.cs" />
+     <Compile Include="Assets\TicTacShotgun\Scripts\Simulation\HumanLocalPlayer.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\Simulation\Move.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\Simulation\Player.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\Simulation\PlayerController.cs" />

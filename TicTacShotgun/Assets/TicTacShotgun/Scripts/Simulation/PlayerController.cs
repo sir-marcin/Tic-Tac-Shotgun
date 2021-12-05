@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TicTacShotgun.Utils;
@@ -5,16 +6,33 @@ using UnityEngine;
 
 namespace TicTacShotgun.Simulation
 {
-    public class PlayerController
+    public class PlayerController : IDisposable
     {
-        const int P1 = 1;
-        const int P2 = 2;
+        public static event Action<Player> OnPlayerChanged = p => { };
 
         Player player1;
         Player player2;
+        Player currentPlayer;
         readonly List<PlayerDetails> playerDetailsList;
 
-        public PlayerDetails CurrentPlayerDetails => playerDetailsList[0];
+        Player CurrentPlayer
+        {
+            get => currentPlayer;
+            set
+            {
+                if (value == currentPlayer)
+                {
+                    return;
+                }
+
+                currentPlayer = value;
+                OnPlayerChanged.Invoke(currentPlayer);
+            }
+        }
+        public PlayerDetails CurrentPlayerDetails => GetPlayerDetails(currentPlayer);
+        public PlayerDetails OtherPlayerDetails => currentPlayer == player1 
+            ? GetPlayerDetails(player2) 
+            : GetPlayerDetails(player1);
 
         public PlayerController(VisualConfig visualConfig, Player player1, Player player2)
         {
@@ -23,9 +41,14 @@ namespace TicTacShotgun.Simulation
 
             playerDetailsList = new List<PlayerDetails>
             {
-                new PlayerDetails(player1, P1, visualConfig.MarkerP1),
-                new PlayerDetails(player2, P2, visualConfig.MarkerP2)
+                new PlayerDetails(player1, visualConfig.MarkerP1),
+                new PlayerDetails(player2, visualConfig.MarkerP2)
             };
+
+            CurrentPlayer = player1;
+
+            player1.OnMovePerformed += OnPlayerMovePerformed;
+            player2.OnMovePerformed += OnPlayerMovePerformed;
         }
 
         public PlayerDetails GetPlayerDetails(Player player)
@@ -43,7 +66,7 @@ namespace TicTacShotgun.Simulation
 
         public PlayerDetails GetPlayerDetails(int index)
         {
-            var playerDetails = playerDetailsList.FirstOrDefault(p => p.Index == index);
+            var playerDetails = playerDetailsList.FirstOrDefault(p => p.Player.Index == index);
 
             if (playerDetails == null)
             {
@@ -53,19 +76,33 @@ namespace TicTacShotgun.Simulation
 
             return playerDetails;
         }
+
+        void OnPlayerMovePerformed(Move move)
+        {
+            if (move.PlayerIndex != currentPlayer.Index)
+            {
+                return;
+            }
+            
+            CurrentPlayer = OtherPlayerDetails.Player;
+        }
         
         public class PlayerDetails
         {
             public readonly Player Player;
-            public readonly int Index;
             public readonly Sprite Sprite;
 
-            public PlayerDetails(Player player, int index, Sprite sprite)
+            public PlayerDetails(Player player, Sprite sprite)
             {
                 Player = player;
-                Index = index;
                 Sprite = sprite;
             }
+        }
+
+        public void Dispose()
+        {
+            player1.Dispose();
+            player2.Dispose();
         }
     }
 }

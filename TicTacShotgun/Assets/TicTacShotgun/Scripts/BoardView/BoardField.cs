@@ -1,11 +1,10 @@
 using System;
 using TicTacShotgun.PlayerInput;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace TicTacShotgun.BoardView
 {
-    public class BoardField : MonoBehaviour, IClickable
+    public class BoardField : MonoBehaviour
     {
         [SerializeField] SpriteRenderer playerMarker;
 

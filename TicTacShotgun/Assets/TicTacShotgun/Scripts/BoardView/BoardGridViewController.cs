@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using TicTacShotgun.GameFlow;
 using TicTacShotgun.Simulation;
 using TicTacShotgun.Utils;
@@ -27,7 +28,10 @@ namespace TicTacShotgun.BoardView
         void OnGameStarted(GameController gameController)
         {
             var visualConfig = gameController.VisualConfig;
+            var board = gameController.CurrentGameInstance.Board;
 
+            board.OnMovePerformed += OnMovePerformed;
+            
             backgroundRenderer.sprite = visualConfig.Background;
 
             for (int i = 0; i < fieldSeparators.Length; i++)
@@ -36,8 +40,8 @@ namespace TicTacShotgun.BoardView
             }
 
             playerController = gameController.PlayerController;
-            var boardArray = gameController.CurrentGameInstance.Board.GetCurrentBoardArray();
-            var boardSize = gameController.CurrentGameInstance.Board.BOARD_SIZE;
+            var boardArray = board.GetCurrentBoardArray();
+            var boardSize = board.BOARD_SIZE;
             var boardFieldIndex = 0;
             
             for (int y = 0; y < boardSize; y++)
@@ -49,18 +53,17 @@ namespace TicTacShotgun.BoardView
                         : playerController.GetPlayerDetails(boardArray[x, y]).Sprite;
                     
                     fields[boardFieldIndex].Initialize(x, y, playerSprite);
-                    fields[boardFieldIndex].OnSelected += OnFieldSelected;
 
                     boardFieldIndex++;
                 }   
             }
         }
-        
-        void OnFieldSelected(BoardField boardField)
+
+        void OnMovePerformed(Move move)
         {
-            TicTacLogger.Log($"Selected ({boardField.X},{boardField.Y})");
+            var field = fields.FirstOrDefault(f => f.X == move.X && f.Y == move.Y);
             
-            boardField.SetSprite(playerController.CurrentPlayerDetails.Sprite);
+            field?.SetSprite(playerController.GetPlayerDetails(move.PlayerIndex).Sprite);
         }
     }
 }
