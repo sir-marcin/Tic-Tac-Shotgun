@@ -11,6 +11,8 @@ namespace TicTacShotgun.BoardView
         [SerializeField] SpriteRenderer backgroundRenderer;
         [SerializeField] SpriteRenderer[] fieldSeparators;
         [SerializeField] BoardField[] fields;
+
+        PlayerController playerController;
         
         void Awake()
         {
@@ -33,7 +35,7 @@ namespace TicTacShotgun.BoardView
                 fieldSeparators[i].sprite = visualConfig.FieldSeparator;
             }
 
-            var playerController = gameController.PlayerController;
+            playerController = gameController.PlayerController;
             var boardArray = gameController.CurrentGameInstance.Board.GetCurrentBoardArray();
             var boardSize = gameController.CurrentGameInstance.Board.BOARD_SIZE;
             var boardFieldIndex = 0;
@@ -48,8 +50,6 @@ namespace TicTacShotgun.BoardView
                     
                     fields[boardFieldIndex].Initialize(x, y, playerSprite);
                     fields[boardFieldIndex].OnSelected += OnFieldSelected;
-                    fields[boardFieldIndex].OnPointerEntered += OnFieldPointerEnter;
-                    fields[boardFieldIndex].OnPointerLeft += OnFieldPointerLeft;
 
                     boardFieldIndex++;
                 }   
@@ -59,16 +59,8 @@ namespace TicTacShotgun.BoardView
         void OnFieldSelected(BoardField boardField)
         {
             TicTacLogger.Log($"Selected ({boardField.X},{boardField.Y})");
-        }
-
-        void OnFieldPointerEnter(BoardField boardField)
-        {
-            TicTacLogger.Log($"Pointer enter ({boardField.X},{boardField.Y})");
-        }
-
-        void OnFieldPointerLeft(BoardField boardField)
-        {
-            TicTacLogger.Log($"Pointer left ({boardField.X},{boardField.Y})");
+            
+            boardField.SetSprite(playerController.CurrentPlayerDetails.Sprite);
         }
     }
 }

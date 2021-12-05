@@ -12,8 +12,9 @@ namespace TicTacShotgun.Simulation
 
         Player player1;
         Player player2;
+        readonly List<PlayerDetails> playerDetailsList;
 
-        List<PlayerDetails> playerDetailsList;
+        public PlayerDetails CurrentPlayerDetails => playerDetailsList[0];
 
         public PlayerController(VisualConfig visualConfig, Player player1, Player player2)
         {
