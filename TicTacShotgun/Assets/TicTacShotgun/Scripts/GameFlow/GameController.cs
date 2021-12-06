@@ -1,6 +1,7 @@
 using System;
 using TicTacShotgun.PlayerInput;
 using TicTacShotgun.Simulation;
+using TicTacShotgun.Utils;
 using UnityEngine;
 
 namespace TicTacShotgun.GameFlow
@@ -14,7 +15,7 @@ namespace TicTacShotgun.GameFlow
 
         PlayerController playerController;
         TicTacToeGame currentGameInstance;
-        HumanPlayerInputMediator humanPlayerInputMediator;
+        PlayerMoveHandler playerMoveHandler;
 
         public VisualConfig VisualConfig => visualConfig;
         public TicTacToeGame CurrentGameInstance => currentGameInstance;
@@ -26,7 +27,7 @@ namespace TicTacShotgun.GameFlow
             currentGameInstance = new TicTacToeGame(board);
             currentGameInstance.OnGameFinished += OnGameInstanceFinished;
 
-            humanPlayerInputMediator = new HumanPlayerInputMediator(board);
+            playerMoveHandler = new PlayerMoveHandler(board);
             
             var playerIndexFactory = new PlayerIndexFactory();
             playerController = new PlayerController(visualConfig, 
@@ -39,17 +40,13 @@ namespace TicTacShotgun.GameFlow
         void OnDestroy()
         {
             playerController.Dispose();
-            humanPlayerInputMediator.Dispose();
+            playerMoveHandler.Dispose();
         }
 
-        void OnGameInstanceFinished(GameBoardState state)
+        void OnGameInstanceFinished(GameEndDetails gameEndDetails)
         {
-            var gameEndDetails = new GameEndDetails(state)
-            {
-                GameController = this
-            };
-            
             OnGameEnded.Invoke(gameEndDetails);
+            TicTacLogger.Log($"Player {gameEndDetails.Champion?.Index} won!");
         }
     }
 }

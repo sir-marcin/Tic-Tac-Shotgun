@@ -8,13 +8,13 @@ namespace TicTacShotgun.Simulation
     {
         public readonly int X;
         public readonly int Y;
-        public readonly int PlayerIndex;
+        public readonly Player Player;
 
-        public Move(int x, int y, int playerIndex)
+        public Move(int x, int y, Player player)
         {
             X = x;
             Y = y;
-            PlayerIndex = playerIndex;
+            Player = player;
         }
     }
 }

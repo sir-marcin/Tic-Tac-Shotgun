@@ -56,7 +56,7 @@
      <Compile Include="Assets\TicTacShotgun\Scripts\GameFlow\GameEndDetails.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\PlayerIndexFactory.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\PlayerInput\BoardMouseInput.cs" />
-     <Compile Include="Assets\TicTacShotgun\Scripts\PlayerInput\HumanPlayerInputMediator.cs" />
+     <Compile Include="Assets\TicTacShotgun\Scripts\PlayerInput\PlayerMoveHandler.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\Simulation\Board.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\Simulation\BoardExtensions.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\Simulation\HumanLocalPlayer.cs" />

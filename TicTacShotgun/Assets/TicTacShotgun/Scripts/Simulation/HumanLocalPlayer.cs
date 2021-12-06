@@ -19,12 +19,12 @@ namespace TicTacShotgun.Simulation
 
         public override void OnTurnEnd()
         {
-            BoardMouseInput.OnClick += HandleBoardFieldClick;
+            BoardMouseInput.OnClick -= HandleBoardFieldClick;
         }
 
         void HandleBoardFieldClick(BoardField boardField)
         {
-            base.Move(boardField);
+            Move(boardField);
         }
     }
 }

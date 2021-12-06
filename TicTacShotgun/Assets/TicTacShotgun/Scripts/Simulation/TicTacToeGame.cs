@@ -7,7 +7,7 @@ namespace TicTacShotgun.Simulation
     {
         readonly Board board;
 
-        public event Action<GameBoardState> OnGameFinished = s => { };
+        public event Action<GameEndDetails> OnGameFinished = d => { };
         public Board Board => board;
         
         public TicTacToeGame(Board board)
@@ -25,8 +25,10 @@ namespace TicTacShotgun.Simulation
             {
                 return;
             }
+
+            var gameEndDetails = new GameEndDetails(boardState, move.Player);
             
-            OnGameFinished.Invoke(boardState);
+            OnGameFinished.Invoke(gameEndDetails);
         }
     }
 }

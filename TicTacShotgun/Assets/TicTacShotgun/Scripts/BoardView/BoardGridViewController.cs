@@ -63,7 +63,7 @@ namespace TicTacShotgun.BoardView
         {
             var field = fields.FirstOrDefault(f => f.X == move.X && f.Y == move.Y);
             
-            field?.SetSprite(playerController.GetPlayerDetails(move.PlayerIndex).Sprite);
+            field?.SetSprite(playerController.GetPlayerDetails(move.Player).Sprite);
         }
     }
 }

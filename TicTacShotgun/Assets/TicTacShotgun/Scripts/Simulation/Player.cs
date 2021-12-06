@@ -20,7 +20,7 @@ namespace TicTacShotgun.Simulation
         
         protected void Move(int x, int y)
         {
-            var move = new Move(x, y, Index);
+            var move = new Move(x, y, this);
             OnMovePerformed.Invoke(move);
         }
 

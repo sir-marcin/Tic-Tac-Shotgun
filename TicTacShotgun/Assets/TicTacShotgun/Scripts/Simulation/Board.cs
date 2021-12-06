@@ -39,7 +39,7 @@ namespace TicTacShotgun.Simulation
                 return;
             }
 
-            board[move.X, move.Y] = move.PlayerIndex;
+            board[move.X, move.Y] = move.Player.Index;
 
             OnMovePerformed.Invoke(move);
         }

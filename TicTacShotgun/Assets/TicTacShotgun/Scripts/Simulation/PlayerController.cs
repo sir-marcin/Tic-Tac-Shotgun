@@ -83,7 +83,7 @@ namespace TicTacShotgun.Simulation
 
         void OnPlayerMovePerformed(Move move)
         {
-            if (move.PlayerIndex != currentPlayer.Index)
+            if (move.Player != currentPlayer)
             {
                 return;
             }
