@@ -8,7 +8,7 @@ namespace TicTacShotgun.Players
     {
         protected Board Board;
         
-        public event Action<Move> OnMovePerformed = m => { };
+        public event Action<Move> OnMoveRequested = m => { };
         public int Index { get; }
 
         public Player(int index, Board board)
@@ -17,15 +17,20 @@ namespace TicTacShotgun.Players
             Index = index;
         }
 
-        protected void Move(BoardField boardField)
+        protected void RequestMove(Board.Index index)
         {
-            Move(boardField.Index.X, boardField.Index.Y);
+            RequestMove(index.X, index.Y);
         }
         
-        protected void Move(int x, int y)
+        protected void RequestMove(BoardField boardField)
+        {
+            RequestMove(boardField.Index.X, boardField.Index.Y);
+        }
+        
+        protected void RequestMove(int x, int y)
         {
             var move = new Move(x, y, this);
-            OnMovePerformed.Invoke(move);
+            OnMoveRequested.Invoke(move);
         }
 
         public virtual void Dispose()

@@ -7,6 +7,7 @@ namespace TicTacShotgun.Simulation
     {
         readonly Board board;
 
+        public event Action OnNextMoveAvailable = () => { };
         public event Action<GameEndDetails> OnGameFinished = d => { };
         public Board Board => board;
         
@@ -24,7 +25,8 @@ namespace TicTacShotgun.Simulation
             switch (boardState)
             {
                 case GameBoardState.GameInProgress:
-                    return;
+                    OnNextMoveAvailable.Invoke();
+                    break;
                 case GameBoardState.Draw:
                     OnGameFinished.Invoke(new GameEndDetails(boardState));
                     break;

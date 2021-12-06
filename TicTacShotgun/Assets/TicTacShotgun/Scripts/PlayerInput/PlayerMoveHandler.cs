@@ -24,7 +24,7 @@ namespace TicTacShotgun.PlayerInput
             
             if (currentPlayer != null)
             {
-                currentPlayer.OnMovePerformed -= OnPlayerMovePerformed;
+                currentPlayer.OnMoveRequested -= OnPlayerMoveRequested;
             }
         }
 
@@ -32,14 +32,14 @@ namespace TicTacShotgun.PlayerInput
         {
             if (currentPlayer != null)
             {
-                currentPlayer.OnMovePerformed -= OnPlayerMovePerformed;
+                currentPlayer.OnMoveRequested -= OnPlayerMoveRequested;
             }
             
             currentPlayer = player;
-            currentPlayer.OnMovePerformed += OnPlayerMovePerformed;
+            currentPlayer.OnMoveRequested += OnPlayerMoveRequested;
         }
 
-        void OnPlayerMovePerformed(Move move)
+        void OnPlayerMoveRequested(Move move)
         {
             if (!board.IsMoveValid(move))
             {

@@ -2,15 +2,17 @@ using TicTacShotgun.Simulation;
 
 namespace TicTacShotgun.Players
 {
-    public class ComputerPlayer : Player
+    public class RandomMoveComputerPlayer : Player
     {
-        public ComputerPlayer(int index, Board board) : base(index, board)
+        public RandomMoveComputerPlayer(int index, Board board) : base(index, board)
         {
         }
         
         public override void OnTurnStart()
         {
+            var randomIndex = Board.GetRandomUnoccupiedIndex();
             
+            RequestMove(randomIndex);
         }
 
         public override void OnTurnEnd()

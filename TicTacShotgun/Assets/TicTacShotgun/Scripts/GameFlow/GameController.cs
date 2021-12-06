@@ -17,6 +17,7 @@ namespace TicTacShotgun.GameFlow
         PlayerController playerController;
         TicTacToeGame currentGameInstance;
         PlayerMoveHandler playerMoveHandler;
+        TurnController turnController;
 
         public VisualConfig VisualConfig => visualConfig;
         public TicTacToeGame CurrentGameInstance => currentGameInstance;
@@ -33,7 +34,9 @@ namespace TicTacShotgun.GameFlow
             var playerIndexFactory = new PlayerIndexFactory();
             playerController = new PlayerController(visualConfig, 
                 new HumanLocalPlayer(playerIndexFactory.GetNextIndex(), board), 
-                new HumanLocalPlayer(playerIndexFactory.GetNextIndex(), board));
+                new RandomMoveComputerPlayer(playerIndexFactory.GetNextIndex(), board));
+
+            turnController = new TurnController(playerController, currentGameInstance);
             
             OnGameStarted.Invoke(this);
         }
@@ -42,6 +45,7 @@ namespace TicTacShotgun.GameFlow
         {
             playerController.Dispose();
             playerMoveHandler.Dispose();
+            turnController.Dispose();
         }
 
         void OnGameInstanceFinished(GameEndDetails gameEndDetails)

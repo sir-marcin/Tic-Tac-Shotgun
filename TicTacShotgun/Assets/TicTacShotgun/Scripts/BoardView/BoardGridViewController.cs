@@ -42,7 +42,7 @@ namespace TicTacShotgun.BoardView
 
             playerController = gameController.PlayerController;
             var boardArray = board.GetCurrentBoardArray();
-            var boardSize = board.BOARD_SIZE;
+            var boardSize = Board.BOARD_SIZE;
             var boardFieldIndex = 0;
             
             for (int y = 0; y < boardSize; y++)

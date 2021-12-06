@@ -22,7 +22,7 @@ namespace TicTacShotgun.Players
 
         void HandleBoardFieldClick(BoardField boardField)
         {
-            Move(boardField);
+            RequestMove(boardField);
         }
     }
 }

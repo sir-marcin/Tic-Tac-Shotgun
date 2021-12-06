@@ -30,6 +30,7 @@ namespace TicTacShotgun.Players
                 
                 currentPlayer = value;
                 OnPlayerChanged.Invoke(currentPlayer);
+                // Debug.Log($"Player {currentPlayer.Index} turn");
                 
                 currentPlayer.OnTurnStart();
             }
@@ -51,9 +52,6 @@ namespace TicTacShotgun.Players
             };
 
             CurrentPlayer = player1;
-
-            player1.OnMovePerformed += OnPlayerMovePerformed;
-            player2.OnMovePerformed += OnPlayerMovePerformed;
         }
 
         public PlayerDetails GetPlayerDetails(Player player)
@@ -82,13 +80,8 @@ namespace TicTacShotgun.Players
             return playerDetails;
         }
 
-        void OnPlayerMovePerformed(Move move)
+        public void ChangePlayer()
         {
-            if (move.Player != currentPlayer)
-            {
-                return;
-            }
-            
             CurrentPlayer = OtherPlayerDetails.Player;
         }
         

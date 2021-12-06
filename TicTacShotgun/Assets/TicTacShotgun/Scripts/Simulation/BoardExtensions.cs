@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using TicTacShotgun.BoardView;
 using TicTacShotgun.GameFlow;
+using TicTacShotgun.Utils;
 
 namespace TicTacShotgun.Simulation
 {
@@ -8,13 +10,8 @@ namespace TicTacShotgun.Simulation
         public static GameBoardState EvaluateCurrentBoardState(this Board board)
         {
             var boardArray = board.GetCurrentBoardArray();
-            var boardSize = board.BOARD_SIZE;
+            var boardSize = Board.BOARD_SIZE;
             var sameValuesInRowCount = 1;
-
-            if (!board.NextMoveAvailable)
-            {
-                return GameBoardState.Draw;
-            }
             
             if (boardArray[0, 0] != Board.EMPTY_FIELD)
             {
@@ -107,7 +104,30 @@ namespace TicTacShotgun.Simulation
                 }
             }
 
-            return GameBoardState.GameInProgress;
+            
+            return board.NextMoveAvailable 
+                ? GameBoardState.GameInProgress 
+                : GameBoardState.Draw;
+        }
+
+        public static Board.Index GetRandomUnoccupiedIndex(this Board board)
+        {
+            var boardArray = board.GetCurrentBoardArray();
+
+            var availableIndexes = new List<Board.Index>(board.UnoccupiedFieldsCount);
+
+            for (int y = 0; y < Board.BOARD_SIZE; y++)
+            {
+                for (int x = 0; x < Board.BOARD_SIZE; x++)
+                {
+                    if (boardArray[x, y] == Board.EMPTY_FIELD)
+                    {
+                        availableIndexes.Add(board.GetBoardIndex(x, y));
+                    }
+                }
+            }
+
+            return availableIndexes.GetRandomElement();
         }
     }
 }
