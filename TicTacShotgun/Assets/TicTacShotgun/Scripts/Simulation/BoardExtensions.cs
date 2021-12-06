@@ -10,6 +10,11 @@ namespace TicTacShotgun.Simulation
             var boardSize = board.BOARD_SIZE;
             var sameValuesInRowCount = 1;
 
+            if (!board.NextMoveAvailable)
+            {
+                return GameBoardState.Draw;
+            }
+            
             if (boardArray[0, 0] != Board.EMPTY_FIELD)
             {
                 // diagonal down
@@ -29,8 +34,11 @@ namespace TicTacShotgun.Simulation
                 }
             }
 
+            
             if (boardArray[0, boardSize - 1] != Board.EMPTY_FIELD)
             {
+                sameValuesInRowCount = 1;
+                
                 // diagonal up
                 for (int x = 1, y = boardSize - 1 - x; x < boardSize; x++, y--)
                 {

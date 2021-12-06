@@ -46,7 +46,18 @@ namespace TicTacShotgun.GameFlow
         void OnGameInstanceFinished(GameEndDetails gameEndDetails)
         {
             OnGameEnded.Invoke(gameEndDetails);
-            TicTacLogger.Log($"Player {gameEndDetails.Champion?.Index} won!");
+
+            switch (gameEndDetails.BoardState)
+            {
+                case GameBoardState.Draw:
+                    TicTacLogger.Log($"Game ended with a draw!");
+                    break;
+                case GameBoardState.Win:
+                    TicTacLogger.Log($"Player {gameEndDetails.Champion?.Index} won!");
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
     }
 }

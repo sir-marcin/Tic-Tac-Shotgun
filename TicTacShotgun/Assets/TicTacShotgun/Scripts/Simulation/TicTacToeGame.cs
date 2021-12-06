@@ -21,14 +21,17 @@ namespace TicTacShotgun.Simulation
         {
             var boardState = board.EvaluateCurrentBoardState();
 
-            if (boardState == GameBoardState.GameInProgress)
+            switch (boardState)
             {
-                return;
+                case GameBoardState.GameInProgress:
+                    return;
+                case GameBoardState.Draw:
+                    OnGameFinished.Invoke(new GameEndDetails(boardState));
+                    break;
+                case GameBoardState.Win:
+                    OnGameFinished.Invoke(new GameEndDetails(boardState, move.Player));
+                    break;
             }
-
-            var gameEndDetails = new GameEndDetails(boardState, move.Player);
-            
-            OnGameFinished.Invoke(gameEndDetails);
         }
     }
 }
