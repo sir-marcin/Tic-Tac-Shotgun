@@ -1,3 +1,4 @@
+using TicTacShotgun.Players;
 using TicTacShotgun.Simulation;
 
 namespace TicTacShotgun.GameFlow

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using TicTacShotgun.GameFlow;
+using TicTacShotgun.Players;
 using TicTacShotgun.Simulation;
 using TicTacShotgun.Utils;
 using UnityEngine;
@@ -61,7 +62,7 @@ namespace TicTacShotgun.BoardView
 
         void OnMovePerformed(Move move)
         {
-            var field = fields.FirstOrDefault(f => f.X == move.X && f.Y == move.Y);
+            var field = fields.FirstOrDefault(f => f.Index.Equals(move.Index));
             
             field?.SetSprite(playerController.GetPlayerDetails(move.Player).Sprite);
         }

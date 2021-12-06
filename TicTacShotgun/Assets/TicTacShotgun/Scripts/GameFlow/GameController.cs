@@ -1,5 +1,6 @@
 using System;
 using TicTacShotgun.PlayerInput;
+using TicTacShotgun.Players;
 using TicTacShotgun.Simulation;
 using TicTacShotgun.Utils;
 using UnityEngine;

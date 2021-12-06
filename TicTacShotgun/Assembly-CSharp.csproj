@@ -57,12 +57,13 @@
      <Compile Include="Assets\TicTacShotgun\Scripts\PlayerIndexFactory.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\PlayerInput\BoardMouseInput.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\PlayerInput\PlayerMoveHandler.cs" />
+     <Compile Include="Assets\TicTacShotgun\Scripts\Players\ComputerPlayer.cs" />
+     <Compile Include="Assets\TicTacShotgun\Scripts\Players\HumanLocalPlayer.cs" />
+     <Compile Include="Assets\TicTacShotgun\Scripts\Players\Player.cs" />
+     <Compile Include="Assets\TicTacShotgun\Scripts\Players\PlayerController.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\Simulation\Board.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\Simulation\BoardExtensions.cs" />
-     <Compile Include="Assets\TicTacShotgun\Scripts\Simulation\HumanLocalPlayer.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\Simulation\Move.cs" />
-     <Compile Include="Assets\TicTacShotgun\Scripts\Simulation\Player.cs" />
-     <Compile Include="Assets\TicTacShotgun\Scripts\Simulation\PlayerController.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\Simulation\TicTacToeGame.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\Utils\TicTacLogger.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\VisualConfig.cs" />

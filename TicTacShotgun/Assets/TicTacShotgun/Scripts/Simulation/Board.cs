@@ -32,7 +32,7 @@ namespace TicTacShotgun.Simulation
         
         public bool IsMoveValid(Move move)
         {
-            return IsMoveWithinBoundaries(move) && board[move.X, move.Y] == EMPTY_FIELD;
+            return IsMoveWithinBoundaries(move) && this[move.Index] == EMPTY_FIELD;
         }
 
         public void MakeMove(Move move)
@@ -43,7 +43,7 @@ namespace TicTacShotgun.Simulation
                 return;
             }
 
-            board[move.X, move.Y] = move.Player.Index;
+            this[move.Index] = move.Player.Index;
             performedMovesCount++;
             
             OnMovePerformed.Invoke(move);
@@ -56,7 +56,7 @@ namespace TicTacShotgun.Simulation
                 return;
             }
 
-            board[move.X, move.Y] = EMPTY_FIELD;
+            this[move.Index] = EMPTY_FIELD;
             performedMovesCount--;
             
             OnUndoMovePerformed.Invoke(move);
@@ -76,14 +76,37 @@ namespace TicTacShotgun.Simulation
 
         bool IsMoveWithinBoundaries(Move move)
         {
-            return move.X < BOARD_SIZE && move.Y < BOARD_SIZE;
+            return move.Index.X < BOARD_SIZE && move.Index.Y < BOARD_SIZE;
         }
 
-        bool IsGameFinished(out GameBoardState? result)
+        int this[Index index]
         {
-            result = null;
+            get => board[index.X, index.Y];
+            set => board[index.X, index.Y] = value;
+        }
+        
+        public readonly struct Index : IComparable<Index>
+        {
+            public readonly int X;
+            public readonly int Y;
 
-            return false;
+            public Index(int x, int y)
+            {
+                X = x;
+                Y = y;
+            }
+
+            public int CompareTo(Index other)
+            {
+                var xComparison = X.CompareTo(other.X);
+                
+                if (xComparison != 0)
+                {
+                    return xComparison;
+                }
+                
+                return Y.CompareTo(other.Y);
+            }
         }
     }
 }

@@ -1,3 +1,5 @@
+using TicTacShotgun.Players;
+
 namespace TicTacShotgun.Simulation
 {
     /// <summary>
@@ -6,14 +8,12 @@ namespace TicTacShotgun.Simulation
     /// </summary>
     public class Move
     {
-        public readonly int X;
-        public readonly int Y;
+        public readonly Board.Index Index;
         public readonly Player Player;
 
         public Move(int x, int y, Player player)
         {
-            X = x;
-            Y = y;
+            Index = new Board.Index(x, y);
             Player = player;
         }
     }

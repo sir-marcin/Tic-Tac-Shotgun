@@ -1,21 +1,25 @@
 using System;
 using TicTacShotgun.BoardView;
+using TicTacShotgun.Simulation;
 
-namespace TicTacShotgun.Simulation
+namespace TicTacShotgun.Players
 {
     public abstract class Player : IDisposable
     {
+        protected Board Board;
+        
         public event Action<Move> OnMovePerformed = m => { };
         public int Index { get; }
 
-        public Player(int index)
+        public Player(int index, Board board)
         {
+            Board = board;
             Index = index;
         }
 
         protected void Move(BoardField boardField)
         {
-            Move(boardField.X, boardField.Y);
+            Move(boardField.Index.X, boardField.Index.Y);
         }
         
         protected void Move(int x, int y)

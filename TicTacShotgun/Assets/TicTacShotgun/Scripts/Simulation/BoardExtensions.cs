@@ -1,3 +1,4 @@
+using TicTacShotgun.BoardView;
 using TicTacShotgun.GameFlow;
 
 namespace TicTacShotgun.Simulation

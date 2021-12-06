@@ -1,15 +1,13 @@
 using TicTacShotgun.BoardView;
 using TicTacShotgun.PlayerInput;
+using TicTacShotgun.Simulation;
 
-namespace TicTacShotgun.Simulation
+namespace TicTacShotgun.Players
 {
     public class HumanLocalPlayer : Player
     {
-        Board board;
-        
-        public HumanLocalPlayer(int index, Board board) : base(index)
+        public HumanLocalPlayer(int index, Board board) : base(index, board)
         {
-            this.board = board;
         }
 
         public override void OnTurnStart()

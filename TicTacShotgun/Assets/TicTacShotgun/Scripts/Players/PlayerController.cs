@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TicTacShotgun.Simulation;
 using TicTacShotgun.Utils;
 using UnityEngine;
 
-namespace TicTacShotgun.Simulation
+namespace TicTacShotgun.Players
 {
     public class PlayerController : IDisposable
     {
