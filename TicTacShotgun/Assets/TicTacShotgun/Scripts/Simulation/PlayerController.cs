@@ -25,8 +25,12 @@ namespace TicTacShotgun.Simulation
                     return;
                 }
 
+                currentPlayer?.OnTurnEnd();
+                
                 currentPlayer = value;
                 OnPlayerChanged.Invoke(currentPlayer);
+                
+                currentPlayer.OnTurnStart();
             }
         }
         public PlayerDetails CurrentPlayerDetails => GetPlayerDetails(currentPlayer);

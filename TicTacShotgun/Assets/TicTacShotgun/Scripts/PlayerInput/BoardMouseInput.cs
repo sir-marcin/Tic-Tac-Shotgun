@@ -49,7 +49,6 @@ namespace TicTacShotgun.PlayerInput
             }
 
             OnClick.Invoke(boardField);
-            boardField.Click();
         }
     }
 }

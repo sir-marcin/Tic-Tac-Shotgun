@@ -1,5 +1,3 @@
-using System;
-using TicTacShotgun.PlayerInput;
 using UnityEngine;
 
 namespace TicTacShotgun.BoardView
@@ -7,8 +5,6 @@ namespace TicTacShotgun.BoardView
     public class BoardField : MonoBehaviour
     {
         [SerializeField] SpriteRenderer playerMarker;
-
-        public event Action<BoardField> OnSelected = bf => { };
 
         public int X { get; private set; }
         public int Y { get; private set; }
@@ -24,11 +20,6 @@ namespace TicTacShotgun.BoardView
         public void SetSprite(Sprite sprite)
         {
             playerMarker.sprite = sprite;
-        }
-
-        public void Click()
-        {
-            OnSelected.Invoke(this);
         }
     }
 }

@@ -29,7 +29,9 @@ namespace TicTacShotgun.GameFlow
             humanPlayerInputMediator = new HumanPlayerInputMediator(board);
             
             var playerIndexFactory = new PlayerIndexFactory();
-            playerController = new PlayerController(visualConfig, new HumanLocalPlayer(playerIndexFactory.GetNextIndex()), new HumanLocalPlayer(playerIndexFactory.GetNextIndex()));
+            playerController = new PlayerController(visualConfig, 
+                new HumanLocalPlayer(playerIndexFactory.GetNextIndex(), board), 
+                new HumanLocalPlayer(playerIndexFactory.GetNextIndex(), board));
             
             OnGameStarted.Invoke(this);
         }

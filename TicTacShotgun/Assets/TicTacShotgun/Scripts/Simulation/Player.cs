@@ -1,5 +1,5 @@
 using System;
-using UnityEngine;
+using TicTacShotgun.BoardView;
 
 namespace TicTacShotgun.Simulation
 {
@@ -12,6 +12,11 @@ namespace TicTacShotgun.Simulation
         {
             Index = index;
         }
+
+        protected void Move(BoardField boardField)
+        {
+            Move(boardField.X, boardField.Y);
+        }
         
         protected void Move(int x, int y)
         {
@@ -22,5 +27,8 @@ namespace TicTacShotgun.Simulation
         public virtual void Dispose()
         {
         }
+
+        public abstract void OnTurnStart();
+        public abstract void OnTurnEnd();
     }
 }
