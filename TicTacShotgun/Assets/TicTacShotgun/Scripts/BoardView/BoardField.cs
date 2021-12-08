@@ -17,7 +17,7 @@ namespace TicTacShotgun.BoardView
             SetSprite(initialSprite);
         }
 
-        public void SetSprite(Sprite sprite, bool animate = false)
+        public void SetSprite(Sprite sprite, bool animate = true)
         {
             if (animate && sprite == null)
             {

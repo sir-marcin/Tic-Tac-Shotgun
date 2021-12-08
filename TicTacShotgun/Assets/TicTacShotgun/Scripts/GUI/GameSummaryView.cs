@@ -52,7 +52,8 @@ namespace TicTacShotgun.GUI
 
         void Hide()
         {
-            rootCanvasGroup.gameObject.SetActive(false);
+            rootCanvasGroup.DOFade(0f, .1f)
+                .OnComplete(() => { rootCanvasGroup.gameObject.SetActive(false); });
         }
     }
 }

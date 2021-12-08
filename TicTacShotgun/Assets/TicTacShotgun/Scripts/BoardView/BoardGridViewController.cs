@@ -75,7 +75,7 @@ namespace TicTacShotgun.BoardView
         {
             var field = fields.FirstOrDefault(f => f.Index.Equals(boardIndex));
             
-            field?.SetSprite(sprite, true);
+            field?.SetSprite(sprite);
         }
     }
 }
