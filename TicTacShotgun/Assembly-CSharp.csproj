@@ -52,6 +52,7 @@
   <ItemGroup>
      <Compile Include="Assets\TicTacShotgun\Scripts\BoardView\BoardField.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\BoardView\BoardGridViewController.cs" />
+     <Compile Include="Assets\TicTacShotgun\Scripts\BoardView\BoardViewScaler.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GameFlow\GameController.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GameFlow\GameEndDetails.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GameFlow\TurnController.cs" />

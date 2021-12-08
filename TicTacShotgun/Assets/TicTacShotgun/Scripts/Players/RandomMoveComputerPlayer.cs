@@ -10,9 +10,8 @@ namespace TicTacShotgun.Players
         
         public override void OnTurnStart()
         {
-            var randomIndex = Board.GetRandomUnoccupiedIndex();
-            
-            RequestMove(randomIndex);
+            var boardIndex = Board.GetRandomUnoccupiedIndex();
+            RequestMove(boardIndex);
         }
 
         public override void OnTurnEnd()
