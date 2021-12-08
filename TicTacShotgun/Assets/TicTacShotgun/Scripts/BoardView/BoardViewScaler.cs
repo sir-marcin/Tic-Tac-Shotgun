@@ -7,7 +7,8 @@ namespace TicTacShotgun.BoardView
     {
         [SerializeField] SpriteRenderer backgroundRenderer;
         [SerializeField] GameObject grid;
-        [SerializeField, Range(0f, 1f)] float gridMargin = .33f; 
+        [SerializeField, Range(0f, 1f)] float gridMargin = .33f;
+        [SerializeField] bool realtimeScaling = true;
         
         Camera mainCamera;
         Bounds gameGridBounds;
@@ -27,14 +28,22 @@ namespace TicTacShotgun.BoardView
 
         void Update()
         {
+            if (!realtimeScaling)
+            {
+                return;
+            }
+            
             ScaleCameraToFitGameView();
+            ScaleGridToFitCamera();
         }
 
         void OnGameStarted(GameController gameController)
         {
             ScaleCameraToFitGameView();
+            ScaleGridToFitCamera();
         }
 
+        [ContextMenu("Scale Camera To Fit Game View")]
         void ScaleCameraToFitGameView()
         {
             if (mainCamera.aspect > 1f)
@@ -49,10 +58,9 @@ namespace TicTacShotgun.BoardView
                 var bgHeight = backgroundRenderer.bounds.size.y;
                 mainCamera.orthographicSize = bgHeight * backgroundRenderer.transform.localScale.y / 2f;
             }
-            
-            ScaleGridToFitCamera();
         }
 
+        [ContextMenu("Scale Grid To Fit Camera")]
         void ScaleGridToFitCamera()
         {
             var gridSize = gameGridBounds.size.x;
