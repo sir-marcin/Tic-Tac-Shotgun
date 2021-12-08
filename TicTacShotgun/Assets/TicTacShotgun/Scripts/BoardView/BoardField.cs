@@ -1,3 +1,4 @@
+using DG.Tweening;
 using TicTacShotgun.Simulation;
 using UnityEngine;
 
@@ -16,9 +17,17 @@ namespace TicTacShotgun.BoardView
             SetSprite(initialSprite);
         }
 
-        public void SetSprite(Sprite sprite)
+        public void SetSprite(Sprite sprite, bool animate = false)
         {
-            playerMarker.sprite = sprite;
+            if (animate && sprite == null)
+            {
+                playerMarker.DOFade(0f, .1f).OnComplete(() => playerMarker.sprite = null);
+            }
+            else
+            {
+                playerMarker.color = Color.white;
+                playerMarker.sprite = sprite;
+            }
         }
     }
 }

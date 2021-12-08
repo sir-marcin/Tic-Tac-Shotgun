@@ -13,19 +13,32 @@ namespace TicTacShotgun.GameFlow
         
         public static event Action<GameController> OnGameStarted = gc => { }; // by default I assign empty methods to avoid nullchecks when invoking
         public static event Action<GameEndDetails> OnGameEnded = d => { };
-
+        
         PlayerController playerController;
         TicTacToeGame currentGameInstance;
         PlayerMoveHandler playerMoveHandler;
         TurnController turnController;
+        BoardHistoryController boardHistoryController;
 
         public VisualConfig VisualConfig => visualConfig;
         public TicTacToeGame CurrentGameInstance => currentGameInstance;
         public PlayerController PlayerController => playerController;
+        public BoardHistoryController BoardHistoryController => boardHistoryController;
 
         void Start()
         {
+            InitializeGame();
+        }
+
+        void OnDestroy()
+        {
+            DisposeGame();
+        }
+
+        void InitializeGame()
+        {
             var board = new Board();
+            boardHistoryController = new BoardHistoryController(board);
             currentGameInstance = new TicTacToeGame(board);
             currentGameInstance.OnGameFinished += OnGameInstanceFinished;
 
@@ -41,13 +54,16 @@ namespace TicTacShotgun.GameFlow
             OnGameStarted.Invoke(this);
         }
 
-        void OnDestroy()
+        void DisposeGame()
         {
+            currentGameInstance.OnGameFinished -= OnGameInstanceFinished;
+            
+            boardHistoryController.Dispose();
             playerController.Dispose();
             playerMoveHandler.Dispose();
             turnController.Dispose();
         }
-
+        
         void OnGameInstanceFinished(GameEndDetails gameEndDetails)
         {
             OnGameEnded.Invoke(gameEndDetails);
@@ -60,9 +76,13 @@ namespace TicTacShotgun.GameFlow
                 case GameBoardState.Win:
                     TicTacLogger.Log($"Player {gameEndDetails.Champion?.Index} won!");
                     break;
-                default:
-                    throw new ArgumentOutOfRangeException();
             }
+        }
+
+        public void Restart()
+        {
+            DisposeGame();
+            InitializeGame();
         }
     }
 }

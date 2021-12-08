@@ -32,6 +32,7 @@ namespace TicTacShotgun.BoardView
             var board = gameController.CurrentGameInstance.Board;
 
             board.OnMovePerformed += OnMovePerformed;
+            board.OnUndoMovePerformed += OnUndoMovePerformed;
             
             backgroundRenderer.sprite = visualConfig.Background;
 
@@ -60,11 +61,21 @@ namespace TicTacShotgun.BoardView
             }
         }
 
+        void OnUndoMovePerformed(Move move)
+        {
+            SetFieldSprite(move.Index, null);
+        }
+
         void OnMovePerformed(Move move)
         {
-            var field = fields.FirstOrDefault(f => f.Index.Equals(move.Index));
+            SetFieldSprite(move.Index, playerController.GetPlayerDetails(move.Player).Sprite);
+        }
+
+        void SetFieldSprite(Board.Index boardIndex, Sprite sprite)
+        {
+            var field = fields.FirstOrDefault(f => f.Index.Equals(boardIndex));
             
-            field?.SetSprite(playerController.GetPlayerDetails(move.Player).Sprite);
+            field?.SetSprite(sprite, true);
         }
     }
 }

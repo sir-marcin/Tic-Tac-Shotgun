@@ -1,9 +1,6 @@
 using System;
-using TicTacShotgun.BoardView;
 using TicTacShotgun.Players;
 using TicTacShotgun.Simulation;
-using TicTacShotgun.Utils;
-using UnityEngine;
 
 namespace TicTacShotgun.PlayerInput
 {
@@ -45,7 +42,8 @@ namespace TicTacShotgun.PlayerInput
             {
                 return;
             }
-                
+            
+            currentPlayer.OnMoveRequested -= OnPlayerMoveRequested;
             board.MakeMove(move);
         }
     }
