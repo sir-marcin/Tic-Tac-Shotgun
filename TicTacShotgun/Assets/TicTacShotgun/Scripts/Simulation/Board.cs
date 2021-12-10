@@ -50,20 +50,9 @@ namespace TicTacShotgun.Simulation
             this[move.Index] = move.Player.Index;
             performedMovesCount++;
 
-            var boardString = string.Empty;
-
-            for (int y = 0; y < BOARD_SIZE; y++)
-            {
-                for (int x = 0; x < BOARD_SIZE; x++)
-                {
-                    boardString += $"{board[x, y] }";
-                }
-
-                boardString += "\n";
-            }
-            
-            Debug.Log($"Player {move.Player.Index}: {move.Index}\n{boardString}");
-
+#if LOG
+            Debug.Log($"Player {move.Player.Index}: {move.Index}\n{this}");
+#endif
             OnMovePerformed.Invoke(move);
         }
 
@@ -113,7 +102,24 @@ namespace TicTacShotgun.Simulation
             get => board[index.X, index.Y];
             set => board[index.X, index.Y] = value;
         }
-        
+
+        public override string ToString()
+        {
+            var boardString = string.Empty;
+
+            for (int y = 0; y < BOARD_SIZE; y++)
+            {
+                for (int x = 0; x < BOARD_SIZE; x++)
+                {
+                    boardString += $"{board[x, y] }";
+                }
+
+                boardString += "\n";
+            }
+
+            return boardString;
+        }
+
         public readonly struct Index : IComparable<Index>
         {
             public readonly int X;
