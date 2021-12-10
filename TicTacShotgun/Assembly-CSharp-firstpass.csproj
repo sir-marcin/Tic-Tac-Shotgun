@@ -674,6 +674,12 @@
  <HintPath>/Applications/Unity/Hub/Editor/2019.4.33f1/Unity.app/Contents/NetStandard/compat/2.0.0/shims/netfx/mscorlib.dll</HintPath>
  </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="GameplayCode.csproj">
+      <Project>{fd77f9ee-28d4-cdcd-5c44-00075dc1f86b}</Project>
+      <Name>GameplayCode</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

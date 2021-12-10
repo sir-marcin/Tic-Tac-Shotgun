@@ -10,11 +10,16 @@ namespace TicTacShotgun.Simulation
     {
         public readonly Board.Index Index;
         public readonly Player Player;
-
-        public Move(int x, int y, Player player)
+        
+        public Move(Board.Index index, Player player)
         {
-            Index = new Board.Index(x, y);
+            Index = index;
             Player = player;
+        }
+        
+        public Move(int x, int y, Player player) : this(new Board.Index(x, y), player)
+        {
+            
         }
     }
 }

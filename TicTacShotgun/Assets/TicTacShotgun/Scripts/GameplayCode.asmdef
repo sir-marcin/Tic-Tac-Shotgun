@@ -1,0 +1,4 @@
+﻿{
+	"name": "GameplayCode",
+	"references": ["Unity.TextMeshPro", "DOTweenA"]
+}

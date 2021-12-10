@@ -3,4 +3,20 @@
 	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=Constants/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AA_BB" /&gt;</s:String>
 	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=PrivateConstants/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AA_BB" /&gt;</s:String>
 	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=PrivateInstanceFields/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="aaBb" /&gt;</s:String>
-	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=PrivateStaticFields/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="aaBb" /&gt;</s:String></wpf:ResourceDictionary>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=PrivateStaticFields/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="aaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=72be8adf_002D106e_002D4132_002D9880_002D2f79e2b05005/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="HintTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::C81D24A8-6717-2A74-88FE-FF38C4E92CCB::.NETFramework,Version=v4.7.1::Tests.GameplayTests.HintTest&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::C81D24A8-6717-2A74-88FE-FF38C4E92CCB::.NETFramework,Version=v4.7.1::Tests.GameplayTests.LooseTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=89742556_002D3ca0_002D4fb2_002D95ba_002D91d39e422766/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="LooseTest #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::C81D24A8-6717-2A74-88FE-FF38C4E92CCB::.NETFramework,Version=v4.7.1::Tests.GameplayTests.LooseTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f3a9cbad_002D0c2d_002D4afb_002Da522_002D57c90f94dc6c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="LooseTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::C81D24A8-6717-2A74-88FE-FF38C4E92CCB::.NETFramework,Version=v4.7.1::Tests.GameplayTests.LooseTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

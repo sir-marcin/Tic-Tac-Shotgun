@@ -6,14 +6,17 @@ namespace TicTacShotgun.Simulation
     public class TicTacToeGame : IDisposable
     {
         readonly Board board;
-
+        GameBoardState currentGameState;
+        
         public event Action OnNextMoveAvailable = () => { };
         public event Action<GameEndDetails> OnGameFinished = d => { };
         public Board Board => board;
-        
+        public GameBoardState CurrentGameState => currentGameState;
+
         public TicTacToeGame(Board board)
         {
             this.board = board;
+            currentGameState = GameBoardState.GameInProgress;
             
             board.OnMovePerformed += OnMovePerformed;
         }
@@ -28,18 +31,18 @@ namespace TicTacShotgun.Simulation
 
         void OnMovePerformed(Move move)
         {
-            var boardState = board.EvaluateCurrentBoardState();
+            currentGameState = board.EvaluateCurrentBoardState();
 
-            switch (boardState)
+            switch (currentGameState)
             {
                 case GameBoardState.GameInProgress:
                     OnNextMoveAvailable.Invoke();
                     break;
                 case GameBoardState.Draw:
-                    OnGameFinished.Invoke(new GameEndDetails(boardState));
+                    OnGameFinished.Invoke(new GameEndDetails(currentGameState));
                     break;
                 case GameBoardState.Win:
-                    OnGameFinished.Invoke(new GameEndDetails(boardState, move.Player));
+                    OnGameFinished.Invoke(new GameEndDetails(currentGameState, move.Player));
                     break;
             }
         }

@@ -1,0 +1,10 @@
+﻿{
+    "name": "Tests",
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "references": ["GameplayCode"]
+}

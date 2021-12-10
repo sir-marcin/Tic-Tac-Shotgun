@@ -19,12 +19,14 @@ namespace TicTacShotgun.GameFlow
         PlayerMoveHandler playerMoveHandler;
         TurnController turnController;
         BoardHistoryController boardHistoryController;
+        HintsController hintsController;
         GameMode currentGameMode;
 
         public VisualConfig VisualConfig => visualConfig;
         public TicTacToeGame CurrentGameInstance => currentGameInstance;
         public PlayerController PlayerController => playerController;
         public BoardHistoryController BoardHistoryController => boardHistoryController;
+        public HintsController HintsController => hintsController;
         public GameMode CurrentGameMode => currentGameMode;
 
         void Start()
@@ -42,6 +44,8 @@ namespace TicTacShotgun.GameFlow
             currentGameMode = GameModeData.SelectedGameMode;
             
             var board = new Board();
+            var hintsBrain = new RandomMoveBrain(board);
+            hintsController = new HintsController(hintsBrain);
             boardHistoryController = new BoardHistoryController(board);
             currentGameInstance = new TicTacToeGame(board);
             playerMoveHandler = new PlayerMoveHandler(board);
@@ -55,6 +59,11 @@ namespace TicTacShotgun.GameFlow
 
         void DisposeGame()
         {
+            if (currentGameInstance == null)
+            {
+                return;
+            }
+            
             currentGameInstance.OnGameFinished -= OnGameInstanceFinished;
             
             currentGameInstance.Dispose();

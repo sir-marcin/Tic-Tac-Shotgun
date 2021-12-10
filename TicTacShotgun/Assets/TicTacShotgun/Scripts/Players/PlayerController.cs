@@ -65,8 +65,8 @@ namespace TicTacShotgun.Players
             
             playerDetailsList = new List<PlayerDetails>
             {
-                new PlayerDetails(player1, visualConfig.MarkerP1),
-                new PlayerDetails(player2, visualConfig.MarkerP2)
+                new PlayerDetails(player1, visualConfig?.MarkerP1),
+                new PlayerDetails(player2, visualConfig?.MarkerP2)
             };
 
             CurrentPlayer = player1;

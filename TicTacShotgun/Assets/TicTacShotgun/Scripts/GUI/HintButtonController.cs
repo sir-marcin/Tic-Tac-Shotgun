@@ -14,6 +14,7 @@ namespace TicTacShotgun.GUI
 
         TicTacToeBrain brain;
         Player currentPlayer;
+        HintsController hintsController;
         
         void Awake()
         {
@@ -47,18 +48,17 @@ namespace TicTacShotgun.GUI
                 gameObject.SetActive(false);
                 return;
             }
-            else
-            {
-                gameObject.SetActive(true);
-            }
-            
+
+            gameObject.SetActive(true);
+
+            hintsController = gameController.HintsController;
             var board = gameController.CurrentGameInstance.Board;
             brain = new RandomMoveBrain(board);
         }
         
         void HandleHintButtonClick()
         {
-            var nextBestMoveIndex = brain.GetNextMove(currentPlayer);
+            var nextBestMoveIndex = hintsController.GetNextHint(currentPlayer);
             gridViewController.ShowHint(nextBestMoveIndex);
         }
     }
