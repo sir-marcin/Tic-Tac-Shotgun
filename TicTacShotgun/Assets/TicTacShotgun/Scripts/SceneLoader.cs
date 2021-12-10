@@ -20,7 +20,7 @@ namespace TicTacShotgun
         {
             screenFade.gameObject.SetActive(true);
             screenFade.alpha = 0f;
-            screenFade.DOFade(1f, .5f).OnComplete(() =>
+            screenFade.DOFade(1f, .2f).OnComplete(() =>
             {
                 SceneManager.LoadScene(GAMEPLAY_SCENE_INDEX);
             });

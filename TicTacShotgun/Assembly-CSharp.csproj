@@ -50,6 +50,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\TicTacShotgun\Scripts\AI\PlayerUpdater.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\AI\RandomMoveBrain.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\AI\TicTacToeBrain.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\BoardView\BoardField.cs" />
@@ -69,6 +70,7 @@
      <Compile Include="Assets\TicTacShotgun\Scripts\GameFlow\GameEndDetails.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GameFlow\TurnController.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GameModeData.cs" />
+     <Compile Include="Assets\TicTacShotgun\Scripts\GameplayScreenFade.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\PlayerInput\BoardMouseInput.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\PlayerInput\PlayerMoveHandler.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\Players\HumanLocalPlayer.cs" />

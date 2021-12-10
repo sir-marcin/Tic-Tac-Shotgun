@@ -10,6 +10,7 @@ namespace TicTacShotgun.GUI
         [SerializeField] Button undoButton;
 
         BoardHistoryController boardHistoryController;
+        bool undoEnabled;
         
         void Awake()
         {
@@ -32,6 +33,11 @@ namespace TicTacShotgun.GUI
 
         void OnPlayerChanged(Player player)
         {
+            if (!undoEnabled)
+            {
+                return;
+            }
+            
             if (player is HumanLocalPlayer)
             {
                 Show();
@@ -44,6 +50,16 @@ namespace TicTacShotgun.GUI
 
         void OnGameStarted(GameController gameController)
         {
+            if (gameController.CurrentGameMode != GameMode.PlayerVsComputer)
+            {
+                undoEnabled = false;
+                Hide();
+                return;
+            }
+
+            undoEnabled = true;
+            Show();
+
             boardHistoryController = gameController.BoardHistoryController;
             
             undoButton.onClick.AddListener(UndoLastMove);

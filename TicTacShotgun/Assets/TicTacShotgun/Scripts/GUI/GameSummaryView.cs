@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using TicTacShotgun.GameFlow;
 using TMPro;
@@ -14,8 +15,12 @@ namespace TicTacShotgun.GUI
         {
             GameController.OnGameStarted += OnGameStarted;
             GameController.OnGameEnded += OnGameEnded;
-            
-            Hide();
+
+        }
+
+        void Start()
+        {
+            rootCanvasGroup.gameObject.SetActive(false);
         }
 
         void OnDestroy()

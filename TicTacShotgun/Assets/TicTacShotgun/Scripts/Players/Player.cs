@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TicTacShotgun.BoardView;
 using TicTacShotgun.Simulation;
 
@@ -39,5 +40,8 @@ namespace TicTacShotgun.Players
 
         public abstract void OnTurnStart();
         public abstract void OnTurnEnd();
+        public virtual void Update()
+        {
+        }
     }
 }

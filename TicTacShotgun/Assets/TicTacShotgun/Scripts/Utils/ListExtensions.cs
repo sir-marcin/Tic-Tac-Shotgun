@@ -1,13 +1,20 @@
+using System;
 using System.Collections.Generic;
-using Random = UnityEngine.Random;
 
 namespace TicTacShotgun.Utils
 {
     public static class ListExtensions
     {
+        static Random Random;
+        
         public static T GetRandomElement<T>(this List<T> list)
         {
-            return list[Random.Range(0, list.Count)];
+            if (Random == null)
+            {
+                Random = new Random();
+            }
+
+            return list[Random.Next(0, list.Count)];
         }
     }
 }
