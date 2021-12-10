@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TicTacShotgun.Simulation;
 using TicTacShotgun.Utils;
 using UnityEngine;
 
@@ -10,11 +11,14 @@ namespace TicTacShotgun.Players
     {
         public static event Action<Player> OnPlayerChanged = p => { };
 
+        const int PLAYER1_INDEX = 1;
+        const int PLAYER2_INDEX = 2;
+        
         Player player1;
         Player player2;
         Player currentPlayer;
         readonly List<PlayerDetails> playerDetailsList;
-
+        
         Player CurrentPlayer
         {
             get => currentPlayer;
@@ -29,7 +33,6 @@ namespace TicTacShotgun.Players
                 
                 currentPlayer = value;
                 OnPlayerChanged.Invoke(currentPlayer);
-                // Debug.Log($"Player {currentPlayer.Index} turn");
                 
                 currentPlayer.OnTurnStart();
             }
@@ -39,11 +42,27 @@ namespace TicTacShotgun.Players
             ? GetPlayerDetails(player2) 
             : GetPlayerDetails(player1);
 
-        public PlayerController(VisualConfig visualConfig, Player player1, Player player2)
+        public PlayerController(VisualConfig visualConfig, Board board, GameMode gameMode)
         {
-            this.player1 = player1;
-            this.player2 = player2;
-
+            switch (gameMode)
+            {
+                case GameMode.PlayerVsComputer:
+                    player1 = new HumanLocalPlayer(PLAYER1_INDEX, board);
+                    player2 = new RandomMoveComputerPlayer(PLAYER2_INDEX, board);
+                    break;
+                case GameMode.PlayerVsPlayer:
+                    player1 = new HumanLocalPlayer(PLAYER1_INDEX, board);
+                    player2 = new HumanLocalPlayer(PLAYER2_INDEX, board);
+                    break;
+                case GameMode.ComputerVsComputer:
+                    player1 = new RandomMoveComputerPlayer(PLAYER1_INDEX, board);
+                    player2 = new RandomMoveComputerPlayer(PLAYER2_INDEX, board);
+                    break;
+                default:
+                    TicTacLogger.LogError($"Unsupported game mode: {GameModeData.SelectedGameMode}");
+                    break;
+            }
+            
             playerDetailsList = new List<PlayerDetails>
             {
                 new PlayerDetails(player1, visualConfig.MarkerP1),

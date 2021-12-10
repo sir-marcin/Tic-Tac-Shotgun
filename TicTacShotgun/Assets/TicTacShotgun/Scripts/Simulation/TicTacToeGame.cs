@@ -3,7 +3,7 @@ using TicTacShotgun.GameFlow;
 
 namespace TicTacShotgun.Simulation
 {
-    public class TicTacToeGame
+    public class TicTacToeGame : IDisposable
     {
         readonly Board board;
 
@@ -16,6 +16,14 @@ namespace TicTacShotgun.Simulation
             this.board = board;
             
             board.OnMovePerformed += OnMovePerformed;
+        }
+
+        public void Dispose()
+        {
+            if (board != null)
+            {
+                board.OnMovePerformed -= OnMovePerformed;
+            }
         }
 
         void OnMovePerformed(Move move)

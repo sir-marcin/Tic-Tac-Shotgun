@@ -40,34 +40,11 @@ namespace TicTacShotgun.GameFlow
             var board = new Board();
             boardHistoryController = new BoardHistoryController(board);
             currentGameInstance = new TicTacToeGame(board);
-            currentGameInstance.OnGameFinished += OnGameInstanceFinished;
-
             playerMoveHandler = new PlayerMoveHandler(board);
-            
-            var playerIndexFactory = new PlayerIndexFactory();
-            switch (GameModeData.GameMode)
-            {
-                case GameMode.PlayerVsComputer:
-                    playerController = new PlayerController(visualConfig, 
-                        new HumanLocalPlayer(playerIndexFactory.GetNextIndex(), board), 
-                        new RandomMoveComputerPlayer(playerIndexFactory.GetNextIndex(), board));
-                    break;
-                case GameMode.PlayerVsPlayer:
-                    playerController = new PlayerController(visualConfig, 
-                        new HumanLocalPlayer(playerIndexFactory.GetNextIndex(), board), 
-                        new HumanLocalPlayer(playerIndexFactory.GetNextIndex(), board));
-                    break;
-                case GameMode.ComputerVsComputer:
-                    playerController = new PlayerController(visualConfig, 
-                        new RandomMoveComputerPlayer(playerIndexFactory.GetNextIndex(), board), 
-                        new RandomMoveComputerPlayer(playerIndexFactory.GetNextIndex(), board));
-                    break;
-                default:
-                    TicTacLogger.LogError($"Unsupported game mode: {GameModeData.GameMode}");
-                    break;
-            }
-
+            playerController = new PlayerController(visualConfig, board, GameModeData.SelectedGameMode);
             turnController = new TurnController(playerController, currentGameInstance);
+            
+            currentGameInstance.OnGameFinished += OnGameInstanceFinished;
             
             OnGameStarted.Invoke(this);
         }
@@ -76,6 +53,7 @@ namespace TicTacShotgun.GameFlow
         {
             currentGameInstance.OnGameFinished -= OnGameInstanceFinished;
             
+            currentGameInstance.Dispose();
             boardHistoryController.Dispose();
             playerController.Dispose();
             playerMoveHandler.Dispose();

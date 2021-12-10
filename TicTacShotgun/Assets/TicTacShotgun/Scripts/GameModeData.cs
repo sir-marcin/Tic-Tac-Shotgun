@@ -5,11 +5,11 @@ namespace TicTacShotgun
     public static class GameModeData
     {
         public static Action<GameMode> OnGameModeChanged = gm => { };
-        public static GameMode GameMode { get; private set; }
+        public static GameMode SelectedGameMode { get; private set; }
 
         public static void SetGameMode(GameMode gameMode)
         {
-            GameMode = gameMode;
+            SelectedGameMode = gameMode;
         }
     }
 
