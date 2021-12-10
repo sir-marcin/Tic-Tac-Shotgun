@@ -22,7 +22,7 @@ namespace TicTacShotgun.GUI
         {
             GameController.OnGameStarted -= OnGameStarted;
             GameController.OnGameEnded -= OnGameEnded;
-            PlayerController.OnPlayerChanged += OnPlayerChanged;
+            PlayerController.OnPlayerChanged -= OnPlayerChanged;
 
             if (undoButton != null)
             {

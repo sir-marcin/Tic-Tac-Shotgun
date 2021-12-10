@@ -53,7 +53,9 @@
      <Compile Include="Assets\TicTacShotgun\Scripts\BoardView\BoardField.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\BoardView\BoardGridViewController.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\BoardView\BoardViewScaler.cs" />
+     <Compile Include="Assets\TicTacShotgun\Scripts\GUI\GameModeButton.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GUI\GameSummaryView.cs" />
+     <Compile Include="Assets\TicTacShotgun\Scripts\GUI\MainMenuController.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GUI\QuitButtonController.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GUI\RestartButtonController.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GUI\TurnIndicator.cs" />
@@ -63,6 +65,7 @@
      <Compile Include="Assets\TicTacShotgun\Scripts\GameFlow\GameController.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GameFlow\GameEndDetails.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GameFlow\TurnController.cs" />
+     <Compile Include="Assets\TicTacShotgun\Scripts\GameModeData.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\PlayerIndexFactory.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\PlayerInput\BoardMouseInput.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\PlayerInput\PlayerMoveHandler.cs" />
@@ -70,6 +73,7 @@
      <Compile Include="Assets\TicTacShotgun\Scripts\Players\Player.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\Players\PlayerController.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\Players\RandomMoveComputerPlayer.cs" />
+     <Compile Include="Assets\TicTacShotgun\Scripts\SceneLoader.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\Simulation\Board.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\Simulation\BoardExtensions.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\Simulation\Move.cs" />

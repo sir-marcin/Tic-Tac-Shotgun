@@ -45,9 +45,27 @@ namespace TicTacShotgun.GameFlow
             playerMoveHandler = new PlayerMoveHandler(board);
             
             var playerIndexFactory = new PlayerIndexFactory();
-            playerController = new PlayerController(visualConfig, 
-                new HumanLocalPlayer(playerIndexFactory.GetNextIndex(), board), 
-                new RandomMoveComputerPlayer(playerIndexFactory.GetNextIndex(), board));
+            switch (GameModeData.GameMode)
+            {
+                case GameMode.PlayerVsComputer:
+                    playerController = new PlayerController(visualConfig, 
+                        new HumanLocalPlayer(playerIndexFactory.GetNextIndex(), board), 
+                        new RandomMoveComputerPlayer(playerIndexFactory.GetNextIndex(), board));
+                    break;
+                case GameMode.PlayerVsPlayer:
+                    playerController = new PlayerController(visualConfig, 
+                        new HumanLocalPlayer(playerIndexFactory.GetNextIndex(), board), 
+                        new HumanLocalPlayer(playerIndexFactory.GetNextIndex(), board));
+                    break;
+                case GameMode.ComputerVsComputer:
+                    playerController = new PlayerController(visualConfig, 
+                        new RandomMoveComputerPlayer(playerIndexFactory.GetNextIndex(), board), 
+                        new RandomMoveComputerPlayer(playerIndexFactory.GetNextIndex(), board));
+                    break;
+                default:
+                    TicTacLogger.LogError($"Unsupported game mode: {GameModeData.GameMode}");
+                    break;
+            }
 
             turnController = new TurnController(playerController, currentGameInstance);
             

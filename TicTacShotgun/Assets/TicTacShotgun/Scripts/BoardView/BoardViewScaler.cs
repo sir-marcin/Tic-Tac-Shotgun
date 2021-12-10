@@ -82,11 +82,16 @@ namespace TicTacShotgun.BoardView
 
         void CalculateSpriteBounds(GameObject go)
         {
-            var childSprites = go.GetComponentsInChildren<SpriteRenderer>();
+            var childSpriteRenderers = go.GetComponentsInChildren<SpriteRenderer>();
 
-            for (int i = 0; i < childSprites.Length; i++)
+            for (int i = 0; i < childSpriteRenderers.Length; i++)
             {
-                gameGridBounds.Encapsulate(childSprites[i].sprite.bounds);
+                if (childSpriteRenderers[i].sprite == null)
+                {
+                    continue;
+                }
+                
+                gameGridBounds.Encapsulate(childSpriteRenderers[i].sprite.bounds);
             }
         }
     }

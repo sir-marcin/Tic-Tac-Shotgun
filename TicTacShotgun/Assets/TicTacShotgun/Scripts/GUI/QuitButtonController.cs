@@ -21,7 +21,7 @@ namespace TicTacShotgun.GUI
 
         void Quit()
         {
-            Application.Quit();
+            SceneLoader.LoadMainMenuScene();
         }
     }
 }
