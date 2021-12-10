@@ -16,3 +16,4 @@ MonoBehaviour:
   markerP1: {fileID: 21300000, guid: bd30ced15dd1c4a81a8798331e1abe4a, type: 3}
   markerP2: {fileID: 21300000, guid: 5e8278e012ff04d9a8bbd92350645568, type: 3}
   fieldSeparator: {fileID: 21300000, guid: 2c0ff12133b094a6a9a294d3efc2eb76, type: 3}
+  hintSprite: {fileID: 21300000, guid: 9d8f737385b7f4a808529754d4b8c1f1, type: 3}

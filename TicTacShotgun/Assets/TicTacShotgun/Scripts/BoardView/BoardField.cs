@@ -9,6 +9,7 @@ namespace TicTacShotgun.BoardView
         [SerializeField] SpriteRenderer playerMarker;
 
         public Board.Index Index { get; private set; }
+        public Sprite Sprite => playerMarker.sprite;
 
         public void Initialize(int x, int y, Sprite initialSprite)
         {

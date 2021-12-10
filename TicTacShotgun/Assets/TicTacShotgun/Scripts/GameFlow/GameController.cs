@@ -19,11 +19,13 @@ namespace TicTacShotgun.GameFlow
         PlayerMoveHandler playerMoveHandler;
         TurnController turnController;
         BoardHistoryController boardHistoryController;
+        GameMode currentGameMode;
 
         public VisualConfig VisualConfig => visualConfig;
         public TicTacToeGame CurrentGameInstance => currentGameInstance;
         public PlayerController PlayerController => playerController;
         public BoardHistoryController BoardHistoryController => boardHistoryController;
+        public GameMode CurrentGameMode => currentGameMode;
 
         void Start()
         {
@@ -37,11 +39,13 @@ namespace TicTacShotgun.GameFlow
 
         void InitializeGame()
         {
+            currentGameMode = GameModeData.SelectedGameMode;
+            
             var board = new Board();
             boardHistoryController = new BoardHistoryController(board);
             currentGameInstance = new TicTacToeGame(board);
             playerMoveHandler = new PlayerMoveHandler(board);
-            playerController = new PlayerController(visualConfig, board, GameModeData.SelectedGameMode);
+            playerController = new PlayerController(visualConfig, board, currentGameMode);
             turnController = new TurnController(playerController, currentGameInstance);
             
             currentGameInstance.OnGameFinished += OnGameInstanceFinished;

@@ -50,11 +50,14 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\TicTacShotgun\Scripts\AI\RandomMoveBrain.cs" />
+     <Compile Include="Assets\TicTacShotgun\Scripts\AI\TicTacToeBrain.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\BoardView\BoardField.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\BoardView\BoardGridViewController.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\BoardView\BoardViewScaler.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GUI\GameModeButton.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GUI\GameSummaryView.cs" />
+     <Compile Include="Assets\TicTacShotgun\Scripts\GUI\HintButtonController.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GUI\MainMenuController.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GUI\QuitButtonController.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GUI\RestartButtonController.cs" />

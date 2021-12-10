@@ -1,9 +1,7 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using TicTacShotgun.GameFlow;
 using TicTacShotgun.Players;
 using TicTacShotgun.Simulation;
-using TicTacShotgun.Utils;
 using UnityEngine;
 
 namespace TicTacShotgun.BoardView
@@ -15,6 +13,8 @@ namespace TicTacShotgun.BoardView
         [SerializeField] BoardField[] fields;
 
         PlayerController playerController;
+        Sprite hintSprite;
+        BoardField currentHintField;
         
         void Awake()
         {
@@ -35,6 +35,7 @@ namespace TicTacShotgun.BoardView
             board.OnUndoMovePerformed += OnUndoMovePerformed;
             
             backgroundRenderer.sprite = visualConfig.Background;
+            hintSprite = visualConfig.HintSprite;
 
             for (int i = 0; i < fieldSeparators.Length; i++)
             {
@@ -76,6 +77,17 @@ namespace TicTacShotgun.BoardView
             var field = fields.FirstOrDefault(f => f.Index.Equals(boardIndex));
             
             field?.SetSprite(sprite);
+        }
+
+        public void ShowHint(Board.Index index)
+        {
+            if (currentHintField != null && currentHintField.Sprite == hintSprite)
+            {
+                return;
+            }
+            
+            currentHintField = fields.FirstOrDefault(f => f.Index.Equals(index));
+            currentHintField.SetSprite(hintSprite);
         }
     }
 }
