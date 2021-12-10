@@ -327,8 +327,11 @@
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/DOTweenEditor.dll.mdb
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/DOTweenEditor.xml
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.iOS.Extensions.Xcode.pdb
-/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/obj/Debug/DOTweenA.csprojAssemblyReference.cache
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/obj/Debug/DOTweenA.csproj.CoreCompileInputs.cache
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/obj/Debug/DOTweenA.csproj.CopyComplete
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/obj/Debug/DOTweenA.dll
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/obj/Debug/DOTweenA.pdb
+/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.LinuxStandalone.Extensions.dll
+/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.WindowsStandalone.Extensions.dll
+/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.WindowsStandalone.Extensions.pdb
+/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.LinuxStandalone.Extensions.pdb

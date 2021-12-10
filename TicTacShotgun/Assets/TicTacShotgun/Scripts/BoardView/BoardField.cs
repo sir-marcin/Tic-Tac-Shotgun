@@ -8,11 +8,14 @@ namespace TicTacShotgun.BoardView
     {
         [SerializeField] SpriteRenderer playerMarker;
 
+        Color defaultColor = Color.white;
+        
         public Board.Index Index { get; private set; }
         public Sprite Sprite => playerMarker.sprite;
 
         public void Initialize(int x, int y, Sprite initialSprite)
         {
+            defaultColor.a = 0f;
             Index = new Board.Index(x, y);
             
             SetSprite(initialSprite);
@@ -26,8 +29,9 @@ namespace TicTacShotgun.BoardView
             }
             else
             {
-                playerMarker.color = Color.white;
+                playerMarker.color = defaultColor;
                 playerMarker.sprite = sprite;
+                playerMarker.DOFade(1f, .1f);
             }
         }
     }

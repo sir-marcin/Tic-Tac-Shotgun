@@ -191,9 +191,6 @@
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEngine.XRModule.dll
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityScript.dll
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityScript.Lang.dll
-/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/DOTween.dll
-/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/Unity.TextMeshPro.dll
-/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/DOTweenA.dll
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/Unity.CompilationPipeline.Common.dll
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/Unity.Cecil.dll
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/Unity.SerializationLogic.dll
@@ -205,7 +202,6 @@
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/Boo.Lang.Parser.dll
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/Boo.Lang.Useful.dll
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/Unity.CecilTools.dll
-/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/GameplayCode.pdb
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEngine.TestRunner.pdb
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.TestRunner.pdb
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.UI.pdb
@@ -335,12 +331,11 @@
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.VR.pdb
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.Graphs.pdb
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.OSXStandalone.Extensions.pdb
-/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/DOTween.pdb
-/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/DOTween.dll.mdb
-/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/DOTween.xml
-/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/Unity.TextMeshPro.pdb
-/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/DOTweenA.pdb
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.iOS.Extensions.Xcode.pdb
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/obj/Debug/Tests.csproj.CopyComplete
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/obj/Debug/Tests.dll
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/obj/Debug/Tests.pdb
+/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.LinuxStandalone.Extensions.dll
+/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.WindowsStandalone.Extensions.dll
+/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.WindowsStandalone.Extensions.pdb
+/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.LinuxStandalone.Extensions.pdb

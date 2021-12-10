@@ -198,7 +198,6 @@
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/Unity.Legacy.NRefactory.dll
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.iOS.Extensions.Xcode.dll
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/Unity.CecilTools.dll
-/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/DOTweenA.pdb
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/Unity.TextMeshPro.pdb
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.UI.pdb
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEngine.UI.pdb
@@ -335,3 +334,7 @@
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/obj/Debug/GameplayCode.csproj.CopyComplete
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/obj/Debug/GameplayCode.dll
 /Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/obj/Debug/GameplayCode.pdb
+/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.LinuxStandalone.Extensions.dll
+/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.WindowsStandalone.Extensions.dll
+/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.WindowsStandalone.Extensions.pdb
+/Users/marcinmurawski/UnityProjects/TicTacShotgun/TicTacShotgun/Temp/bin/Debug/UnityEditor.LinuxStandalone.Extensions.pdb
