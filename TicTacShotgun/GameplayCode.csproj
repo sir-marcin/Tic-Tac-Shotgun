@@ -56,6 +56,7 @@
      <Compile Include="Assets\TicTacShotgun\Scripts\BoardView\BoardField.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\BoardView\BoardGridViewController.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\BoardView\BoardViewScaler.cs" />
+     <Compile Include="Assets\TicTacShotgun\Scripts\BuildSettingsValidator.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GUI\GameModeButton.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GUI\GameSummaryView.cs" />
      <Compile Include="Assets\TicTacShotgun\Scripts\GUI\HintButtonController.cs" />

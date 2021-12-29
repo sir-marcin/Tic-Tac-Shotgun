@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameplayCode", "GameplayCode.csproj", "{13169639-a8bc-4af1-b1cf-b08206048c40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DOTweenA", "DOTweenA.csproj", "{b3190fd3-dd1c-3a68-57a0-c0467ee852cb}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests.csproj", "{8273989d-43be-7522-5b78-aac11c43d431}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13169639-a8bc-4af1-b1cf-b08206048c40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13169639-a8bc-4af1-b1cf-b08206048c40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13169639-a8bc-4af1-b1cf-b08206048c40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13169639-a8bc-4af1-b1cf-b08206048c40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{b3190fd3-dd1c-3a68-57a0-c0467ee852cb}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{b3190fd3-dd1c-3a68-57a0-c0467ee852cb}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{b3190fd3-dd1c-3a68-57a0-c0467ee852cb}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{b3190fd3-dd1c-3a68-57a0-c0467ee852cb}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8273989d-43be-7522-5b78-aac11c43d431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8273989d-43be-7522-5b78-aac11c43d431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8273989d-43be-7522-5b78-aac11c43d431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8273989d-43be-7522-5b78-aac11c43d431}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
