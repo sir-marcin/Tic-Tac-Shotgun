@@ -19,7 +19,7 @@ namespace TicTacShotgun.GameFlow
 
         public void Dispose()
         {
-            game.OnNextMoveAvailable += OnNextMoveAvailable;
+            game.OnNextMoveAvailable -= OnNextMoveAvailable;
         }
 
         void OnNextMoveAvailable()
